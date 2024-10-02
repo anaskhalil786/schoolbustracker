@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:schoolbustracker/admin_auth.dart';
 import 'package:schoolbustracker/driver_list_screen.dart';
+import 'package:schoolbustracker/view_bus_location.dart';
 
 import 'add_driver_screen.dart';
 import 'driver_student_list.dart';
@@ -148,7 +149,7 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFF0C2544),
-        title: Text('admin@gmail.com'),
+        title: Text('School Bus Tracker'),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.notifications),
@@ -227,6 +228,34 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => ParentDetailsScreen(),
+                  ),
+                );
+                // Handle view parent details action
+              },
+            ),
+            buildGridTile(
+              context,
+              'assets/bus.jpg',
+              'View Bus Location',
+              () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => BusTrackingScreen(),
+                  ),
+                );
+                // Handle view parent details action
+              },
+            ),
+            buildGridTile(
+              context,
+              'assets/locationlogo.png',
+              'Driver Site Location',
+              () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => BusTrackingScreen(),
                   ),
                 );
                 // Handle view parent details action
